@@ -1,0 +1,27 @@
+
+CREATE TABLE Materias (
+    idMateria INT PRIMARY KEY,
+    nombreMateria VARCHAR(50) NOT NULL
+);
+
+-- Creación de la tabla "Alumnos"
+CREATE TABLE Alumnos (
+    idAlumno INT PRIMARY KEY,
+    nombreAlumno VARCHAR(50) NOT NULL,
+    edad INT,
+    idMateria INT,
+    FOREIGN KEY (idMateria) REFERENCES Materias(idMateria)
+);
+
+
+INSERT INTO `materias`(`idMateria`, `nombreMateria`) VALUES ('1','Matematicas');
+INSERT INTO `materias`(`idMateria`, `nombreMateria`) VALUES ('2','Ingles');
+
+INSERT INTO Alumnos (idAlumno,nombreAlumno, edad, idMateria)
+VALUES (1,'Jhon Bautista', '10','2');
+INSERT INTO Alumnos (idAlumno,nombreAlumno, edad, idMateria)
+VALUES (2,'Jairo Amaya', '9', '1');
+INSERT INTO Alumnos (idAlumno,nombreAlumno, edad, idMateria)
+VALUES (3,'Alexandra Benitez', '11', '2');
+INSERT INTO Alumnos (idAlumno,nombreAlumno, edad, idMateria)
+VALUES (4,'Maria Cordoba', '12', '1');
